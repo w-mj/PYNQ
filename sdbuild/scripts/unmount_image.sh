@@ -4,7 +4,7 @@ set -e
 
 target=$1
 image_file=$2
-used_loop=$(sudo losetup -j $image_file | grep -o 'loop[0-9]*')
+used_loop=$(sudo losetup | grep $image_file | grep -o 'loop[0-9]*')
 
 sudo umount $target/boot
 sudo umount $target

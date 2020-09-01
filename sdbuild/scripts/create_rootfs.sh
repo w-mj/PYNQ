@@ -60,8 +60,11 @@ EOT
 
 if [ -n "$PYNQ_UBUNTU_REPO" ]; then
   cat - >> $target/postinst2.sh <<EOT
-echo "deb http://ports.ubuntu.com/ubuntu-ports bionic main universe" > /etc/apt/sources.list.d/multistrap-bionic.list
-echo "deb-src http://ports.ubuntu.com/ubuntu-ports bionic main universe" >> /etc/apt/sources.list.d/multistrap-bionic.list
+# echo "deb http://ports.ubuntu.com/ubuntu-ports bionic main universe" > /etc/apt/sources.list.d/multistrap-bionic.list
+# echo "deb-src http://ports.ubuntu.com/ubuntu-ports bionic main universe" >> /etc/apt/sources.list.d/multistrap-bionic.list
+# https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/
+echo "deb https://mirrors.ustc.edu.cn/ubuntu-ports bionic main universe" > /etc/apt/sources.list.d/multistrap-bionic.list
+echo "deb-src https://mirrors.ustc.edu.cn/ubuntu-ports bionic main universe" >> /etc/apt/sources.list.d/multistrap-bionic.list
 EOT
 fi
 
